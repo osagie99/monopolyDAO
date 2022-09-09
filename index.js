@@ -26,6 +26,7 @@ const submitForm = async (e) => {
   //   Login request to back end to get token
   const loginRequest = await fetch(baseUrl + loginUrl, {
     method: "POST",
+    mode: "no-cors",
     headers: {
       "Content-Type": "application/json",
     },
@@ -47,6 +48,7 @@ const submitForm = async (e) => {
   //   Make post request to save email in database
   const saveEmail = await fetch(baseUrl + registerEmailUrl, {
     method: "POST",
+    mode: "no-cors",
     headers: {
       Authorization: "Bearer " + token,
       "Content-Type": "application/json",
