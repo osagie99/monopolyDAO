@@ -35,7 +35,7 @@
 body {
   background-color: #000;
   background: linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0.5) 91.01%),
-    url("/assets/MDAO GIF.gif");
+    url("/assets/MDAO\ GIF.gif");
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
@@ -176,8 +176,8 @@ body {
     width: fit-content;
   }
   #success-message {
-  width: fit-content;
-}
+    width: fit-content;
+  }
 }
 
 @media screen and (max-width: 680px) {
