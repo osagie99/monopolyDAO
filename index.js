@@ -3,7 +3,7 @@ const submitForm = async (e) => {
   var validate = validateEmail(email);
   const username = "admin";
   const password = "admin";
-  const baseUrl = new URL(`http://localhost:8080/api`);
+  const baseUrl = new URL(`https://hidden-waters-81599.herokuapp.com/api/authenticate`);
   const loginUrl = "/authenticate";
   const registerEmailUrl = "/email-registrrations";
 
