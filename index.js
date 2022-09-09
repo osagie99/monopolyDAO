@@ -3,7 +3,9 @@ const submitForm = async (e) => {
   var validate = validateEmail(email);
   const username = "admin";
   const password = "admin";
-  const baseUrl = new URL(`https://monopoly-dao.herokuapp.com/api`);
+=======
+  const baseUrl = new URL(`https://hidden-waters-81599.herokuapp.com/api`);
+>>>>>>> 0c1488c1e1795c90a52acd847c67bd425373d36d
   const loginUrl = "/authenticate";
   const registerEmailUrl = "/email-registrations";
 
@@ -30,6 +32,7 @@ const submitForm = async (e) => {
   const loginRequest = await fetch(baseUrl + loginUrl, {
     credentials: "include",
     method: "POST",
+    mode: "no-cors",
     headers: {
       //   "Content-Type": "application/json",
       Accept: "application/json, text/plain, */*",
@@ -57,6 +60,7 @@ const submitForm = async (e) => {
   const saveEmail = await fetch(baseUrl + registerEmailUrl, {
     credentials: "include",
     method: "POST",
+    mode: "no-cors",
     headers: {
       Authorization: "Bearer " + token,
       //   "Content-Type": "application/json",
