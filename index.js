@@ -3,7 +3,7 @@ const submitForm = async (e) => {
   var validate = validateEmail(email);
   const username = "admin";
   const password = "admin";
-  const baseUrl = new URL(`http://localhost:8080/api`);
+  const baseUrl = new URL(`https://monopoly-dao.herokuapp.com/api`);
   const loginUrl = "/authenticate";
   const registerEmailUrl = "/email-registrations";
 
