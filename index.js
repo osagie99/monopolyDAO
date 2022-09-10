@@ -3,9 +3,7 @@ const submitForm = async (e) => {
   var validate = validateEmail(email);
   const username = "admin";
   const password = "admin";
-  const baseUrl = new URL(
-    `https://evening-stream-65553.herokuapp.com/https://monopoly-dao.herokuapp.com/api`
-  );
+  const baseUrl = new URL(`http://localhost:8080/api`);
   const loginUrl = "/authenticate";
   const registerEmailUrl = "/email-registrations";
 
@@ -26,15 +24,9 @@ const submitForm = async (e) => {
   }
 
   //   Login request to back end to get token
-  console.log("====================================");
-  console.log("got 1");
-  console.log("====================================");
   const loginRequest = await fetch(baseUrl + loginUrl, {
-    credentials: "include",
     method: "POST",
     headers: {
-      //   "Content-Type": "application/json",
-      Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -51,18 +43,11 @@ const submitForm = async (e) => {
   //   Get token from backend
   const data = await loginRequest.json();
   const token = data.id_token;
-
-  console.log("====================================");
-  console.log("got two");
-  console.log("====================================");
   //   Make post request to save email in database
   const saveEmail = await fetch(baseUrl + registerEmailUrl, {
-    credentials: "include",
     method: "POST",
     headers: {
       Authorization: "Bearer " + token,
-      //   "Content-Type": "application/json",
-      Accept: "application/json, text/plain, */*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
