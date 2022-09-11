@@ -1,3 +1,6 @@
+if (window.location.protocol != "https:") {
+  location.href = location.href.replace("http://", "https://");
+}
 const submitForm = async (e) => {
   const email = document.getElementById("input-text").value;
   var validate = validateEmail(email);
